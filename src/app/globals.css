@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-navy-dark: #06121E;
+    --navy-surface: #0a1a2b;
+    --navy-border: rgba(6, 182, 212, 0.22);
+    --cyan-accent: #00f2fe;
+    --teal-accent: #14b8a6;
+  }
+
+  body {
+    background-color: #06121E;
+    color: #e2e8f0;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* Custom high-tech scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #06121E;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #15324e;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+  }
+}
+
+/* Fortune 500 Glassmorphism Tactical Card */
+.glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(12, 30, 49, 0.72) 0%,
+    rgba(7, 21, 35, 0.8) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 20px rgba(6, 182, 212, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(6, 182, 212, 0.42);
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.6),
+    0 0 25px -2px rgba(6, 182, 212, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Glowing border highlights */
+.glow-border-cyan {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.25), inset 0 0 15px rgba(6, 182, 212, 0.1);
+}
+
+.glow-border-rose {
+  border-color: rgba(244, 63, 94, 0.5);
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.25), inset 0 0 15px rgba(244, 63, 94, 0.1);
+}
+
+.glow-border-amber {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25), inset 0 0 15px rgba(245, 158, 11, 0.1);
+}
+
+.glow-border-teal {
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.25), inset 0 0 15px rgba(20, 184, 166, 0.1);
+}
+
+/* Ambient Radial Lighting Effects */
+.ambient-glow-cyan {
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.15) 0%,
+    rgba(6, 182, 212, 0.03) 45%,
+    transparent 70%
+  );
+}
+
+.ambient-glow-teal {
+  background: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.15) 0%,
+    rgba(20, 184, 166, 0.03) 45%,
+    transparent 70%
+  );
+}
+
+/* Monospace font for telemetry and coordinates */
+.font-mono-telemetry {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: -0.015em;
+}
+
+/* Subtle cyber scanlines overlay */
+.cyber-overlay {
+  background-image: linear-gradient(
+    rgba(6, 182, 212, 0.035) 1px,
+    transparent 1px
+  ),
+  linear-gradient(90deg, rgba(6, 182, 212, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Animated radar rotation */
+@keyframes radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 5s linear infinite;
+  transform-origin: center center;
+}
+
+/* Subtle ping animation */
+@keyframes ping-subtle {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.animate-ping-subtle {
+  animation: ping-subtle 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Sparkline shimmer */
+@keyframes sparkline-shimmer {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-sparkline {
+  stroke-dasharray: 200;
+  animation: sparkline-shimmer 2.2s ease-out forwards;
+}
+
+/* Smooth Interactive transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mapbox GL Dark Theme & Glassmorphism Overrides */
+.mapboxgl-popup-content {
+  background: rgba(6, 18, 30, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(6, 182, 212, 0.25) !important;
+  color: #e2e8f0 !important;
+  padding: 12px 14px !important;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: rgba(6, 18, 30, 0.95) !important;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: rgba(6, 18, 30, 0.95) !important;
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: rgba(6, 18, 30, 0.95) !important;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: rgba(6, 18, 30, 0.95) !important;
+}
+
+/* Mapbox GL Canvas and Container sizing guarantees */
+.mapboxgl-map {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.mapboxgl-canvas-container,
+.mapboxgl-canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
+
+
